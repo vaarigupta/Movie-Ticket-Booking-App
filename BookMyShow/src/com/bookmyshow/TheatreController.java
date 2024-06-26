@@ -49,13 +49,14 @@ public class TheatreController {
         return theatresInACity.get(city);
     }
 
+    //find all the theatres in the specific city running the user's interested movie;
     public  Map<Theatre, List<MovieShow>> GetAllShow(City city, Movie interestedMovie)
     {
-        Map<Theatre,List<MovieShow>> showsInATheatre = new HashMap<Theatre, List<MovieShow>>();
+        Map<Theatre,List<MovieShow>> showsInATheatre = new HashMap<>();
         List<Theatre> threatresAvailable = GetTheatreInACity(city);
         for(Theatre t : threatresAvailable)
         {
-           List<MovieShow> showsForInterestedMovie = new ArrayList<MovieShow>();
+           List<MovieShow> showsForInterestedMovie = new ArrayList<>();
            for(MovieShow ms : t.getMovieShowList())
            {
                if(ms.getMovie().equals(interestedMovie))
